@@ -24,7 +24,7 @@ A machine learning-based web application that recommends suitable crops based on
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/crop-recommendation-app.git
+git clone https://github.com/your-github-username/crop-recommendation-app.git
 cd crop-recommendation-app
 ```
 
@@ -48,7 +48,7 @@ python -m streamlit run app.py
 3. Access the web interface at `http://localhost:8501`
 
 ## 🌐 Live Demo
-Check out the live demo at: https://yourusername
+Check out the live demo at: https://your-github-username-crop-recommendation-app-app.streamlit.app
 The system accepts the following input parameters:
 - Nitrogen (N): 0-140
 - Phosphorus (P): 0-140
