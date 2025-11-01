@@ -7,10 +7,17 @@ import joblib
 import os
 
 # 1. load dataset
-df = pd.read_csv("data/Crop_recommendation.csv")  # change path if needed
-# Inspect columns
-print(df.head())
-# Typical columns: N, P, K, temperature, humidity, ph, rainfall, label
+try:
+    # Try to load from root directory
+    df = pd.read_csv("Crop_recommendation.csv")
+except FileNotFoundError:
+    print("Dataset not found in root directory. Attempting to download...")
+    import download_data
+    download_data.download_dataset()
+    df = pd.read_csv("Crop_recommendation.csv")
+
+print("Dataset loaded successfully!")
+print("Columns in dataset:", df.columns.tolist())
 
 # 2. features and target
 X = df[['N','P','K','temperature','humidity','ph','rainfall']]
