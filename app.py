@@ -1,12 +1,26 @@
 # app.py
 import streamlit as st
-import joblib
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt  # Add this import
 
-# Load the trained model
-model = joblib.load("model/crop_model.joblib")
+# Add error handling for imports
+try:
+    import joblib
+    import numpy as np
+    import pandas as pd
+    import matplotlib.pyplot as plt
+except ImportError as e:
+    st.error(f"Required package missing. Please run: pip install -r requirements.txt")
+    st.error(f"Error: {e}")
+    st.stop()
+
+# Add error handling for model loading
+try:
+    model = joblib.load("model/crop_model.joblib")
+except FileNotFoundError:
+    st.error("Model file not found. Please ensure model/crop_model.joblib exists.")
+    st.stop()
+except Exception as e:
+    st.error(f"Error loading model: {e}")
+    st.stop()
 
 st.set_page_config(page_title="Crop Recommendation", layout="centered")
 
