@@ -47,8 +47,8 @@ python -m streamlit run app.py
 
 3. Access the web interface at `http://localhost:8501`
 
-## 📊 Input Parameters
-
+## 🌐 Live Demo
+Check out the live demo at: https://yourusername
 The system accepts the following input parameters:
 - Nitrogen (N): 0-140
 - Phosphorus (P): 0-140
