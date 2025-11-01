@@ -14,9 +14,9 @@ except ImportError as e:
 
 # Add error handling for model loading
 try:
-    model = joblib.load("model/crop_model.joblib")
+    model = joblib.load("model/crop_model.joblib")  # Updated path
 except FileNotFoundError:
-    st.error("Model file not found. Please ensure model/crop_model.joblib exists.")
+    st.error("Model file not found. Please ensure crop_model.joblib exists in the root directory.")
     st.stop()
 except Exception as e:
     st.error(f"Error loading model: {e}")
